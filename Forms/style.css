@@ -1,0 +1,47 @@
+body {
+    background: #e0caca;
+}
+
+#h2t {
+    background: rgb(167, 121, 209);
+
+}
+
+#set {
+    background: rgb(167, 121, 209);
+     /* border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px; */
+    border: solid  rgba(11, 11, 11, 0.438);
+}
+
+.box {
+    border-style: double;
+    background: rgb(167, 121, 209);
+    /* border-radius: 0px; */
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 300px;
+    text-align: center;
+    padding: 5px;
+    margin-top: 4px;
+
+}
+
+#alpha{
+    border: solid  rgba(11, 11, 11, 0.438);
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+#x{
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-color: rgb(167, 121, 209);
+    color: rgb(0, 0, 255);
+    /* width: 55px; */
+}
+
+.abc{
+    border-radius: 0px 10px 10px 10px;
+    border: solid rgba(11, 11, 11, 0.438);
+}

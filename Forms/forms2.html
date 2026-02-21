@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+>>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1 class="box">Job Application</h1>
+    <form >
+        <label id="set" for="name">Name:</label>
+        <input id="alpha"  type="text" name="name" id="name"  placeholder="Enter your Name..."><br><br>
+
+        <label id="set" for="email">Email:</label>
+        <input  id="alpha" type="text" name="email" id="email"  placeholder="Enter your Email..."> <br><br>
+
+        <label id="set" for="phone">Phone:</label>
+        <input  id="alpha" type="number" name="phone" id="phone"  placeholder="Enter your Phone No..."> <br><br>
+
+        <label id="set" for="fileupload">Resume:</label>
+        <input id="alpha" type="file" name="fileupload" id="fileupload"><br><br>
+
+        <label id="set" for="counter">Experiance(In years )</label>
+        <input  type="number" id="counter" name="counter" min="0" max="15" placeholder="Max15">
+        <br><br>
+        <fieldset>
+            
+                <legend id="set">Skills:</legend>
+                <label for="checkbox1">HTML</label>
+                <input type="checkbox" name="checkbox1" id="checkbox1">
+                <label for="checkbox2">CSS</label>
+                <input type="checkbox" name="checkbox2" id="checkbox2">
+                <label for="checkbox3">JS</label>
+                <input type="checkbox" name="checkbox3" id="checkbox3">
+            
+        </fieldset><br>
+
+        <label id="set" for="education">Higher Education:</label>
+        <select name="educationType" id="educationType">
+            <option value="a">Class 10th</option>
+            <option value="b">Class 12th</option>
+            <option value="c">Graducation</option>
+            <option value="d">Master Degree</option>
+        </select>
+        <br>
+        <br>
+        <fieldset>
+            <legend id="set">Avalibality:</legend>
+            <label for="radiobutton">Full-Time</label>
+            <input type="radio" name="radio" id="radiobutton"><br>
+
+            <label for="radiobutton2">Part-Time</label>
+            <input type="radio" name="radio" id="radiobutton2">
+        </fieldset>
+        <br> 
+        <label id="set" for="comments">Additional Comments:</label><br>
+        <textarea class="abc" name="massage" id="massage" cols="40" rows="5"></textarea>
+
+        <button id= "x">SUMBIT</button>
+
+    </form>
+</body>
+
+</html>

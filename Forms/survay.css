@@ -1,0 +1,84 @@
+body {
+    background-color: rgba(197, 0, 0, 0.793);
+}
+
+#heading {
+    color: white;
+}
+
+.sumbitbutton {
+    padding: 14px 28px;
+    background-color: #0c0c1a;
+    color: #00f7ff;
+    border: 2px solid #00f7ff;
+    border-radius: 4px;
+    font-size: 18px;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    cursor: pointer;
+    text-shadow: 0 0 5px #00f7ff;
+    box-shadow: 0 0 10px #00f7ff, inset 0 0 10px #00f7ff;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.sumbitbutton:hover {
+    background-color: #1ccd39;
+    color: #0c0c1a;
+    text-shadow: none;
+    box-shadow: 0 0 20px #00f7ff, 0 0 30px #00f7ff, inset 0 0 10px #00f7ff;
+}
+
+.sumbitbutton::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #00f7ff;
+    z-index: -1;
+    border-radius: 2px;
+    filter: blur(15px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.sumbitbutton:hover::before {
+    opacity: 0.4;
+}
+
+#name {
+    border: solid;
+    border-radius: 5px 0px 5px 0px;
+}
+
+#email {
+    border: solid;
+    border-radius: 5px 0px 5px 0px;
+}
+
+#age {
+    border: solid;
+    border-radius: 5px 0px 5px 0px;
+}
+
+#phone {
+    border: solid;
+    border-radius: 5px 0px 5px 0px;
+}
+
+#sel {
+    border: solid;
+    border-radius: 5px 0px 5px 0px;
+}
+
+#foot {
+    border: solid;
+    width: 300px;
+    padding-left: 6px;
+    border-radius: 5px 0px 5px 0px;
+    color: rgb(52, 8, 93);
+    background-color: #fff;
+    /* display: inline-block; */
+}
