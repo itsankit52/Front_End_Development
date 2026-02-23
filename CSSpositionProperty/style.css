@@ -1,0 +1,60 @@
+/* body {
+    color: rgb(27, 161, 10);
+    background-color: black;
+    font-size: larger;
+    font-family: cursive;
+} */
+
+img {
+    /* width: 200px; */
+    margin: 10px;
+}
+
+.container {
+    border: 2px solid black;
+    background: rgb(118, 163, 203);
+    border-color: rgb(255, 123, 0);
+    height: 1000px;
+}
+
+/* .image2 {
+    position: relative;
+    top: 100px;
+    left: 50px;
+    /* right: 200px; */
+    /* bottom: 100px; 
+
+    /* gap maintain in relative position. Overlapping*
+} 
+*/
+/* 
+.image1{
+    /* No gap maintain in absolute position   */
+    /* Relative to it's closest position. *
+    position: absolute;
+    top:100px;
+} */
+
+.image3{
+
+    position: fixed;
+    /* Image position are fixed or images are not moved. Puri window mai fixed rahega*/
+}
+
+.image2{
+    /* Jab tak parent container ke aander rehega tab tak containts stickey rahega.*/
+    position: sticky;
+    top: 100px;
+}
+
+.box{
+    background-color: blueviolet;
+    height: 1000px;
+}
+
+.notes{
+    background-color: black;
+    color: green;
+    font-size: 17px;
+    font-family: cursive;
+}
