@@ -1,0 +1,13 @@
+.container{
+    background-color: rgb(143, 240, 240);
+    border: 2px solid black;
+    width: 500px;
+    height: 500px;
+    overflow: scroll;
+    /* overflow: hidden; */
+    margin: auto;
+    margin-top: 50px;
+}
+body{
+    background-color: rgb(197, 139, 139);
+}
