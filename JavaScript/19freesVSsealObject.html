@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object.freeze( ) vs Object.seal( )</title>
+    <script src="19freezVSseal.js"></script>
+</head>
+
+<body>
+    <h1>Object.freeze( ) vs Object.seal( )</h1>
+    <h3>Seal</h3>
+    <p>Object.seal() prevents adding or removing properties from an object, but allows modifying existing properties.
+    </p>
+    <pre>const sealedObject = {
+  name: "Ankit",
+  age: 20
+};
+
+Object.seal(sealedObject);
+
+    // This will work (modifying existing property)
+    sealedObject.age = 21;
+
+    // These will not work (in non-strict mode they fail silently)
+    sealedObject.city = "japan"; // Cannot add new property
+    delete sealedObject.name;       // Cannot delete property
+
+    // Check if object is sealed
+    console.log(Object.isSealed(sealedObject)); // true</pre>
+
+    <h3>freeze</h3>
+    <p>Object.freeze() is more restrictive - it prevents adding, removing, or modifying properties.</p>
+    <pre>const frozenObject = {
+  name: "piyush",
+  age: 20
+};
+
+Object.freeze(frozenObject);
+
+    // These will not work (in non-strict mode they fail silently)
+    frozenObject.age = 21;          // Cannot modify existing property
+    frozenObject.city = "japan"; // Cannot add new property
+    delete frozenObject.name;       // Cannot delete property
+
+    // Check if object is frozen
+    console.log(Object.isFrozen(frozenObject)); // true</pre>
+</body>
+
+</html>

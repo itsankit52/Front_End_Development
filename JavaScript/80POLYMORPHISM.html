@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POLYMORPHISM</title>
+</head>
+
+<body>
+    <h1>POLYMORPHISM in JS</h1>
+    <p>Polymorphism means one method behaves differently in different objects.</p>
+
+    <script>
+        class Shape {
+            area() {
+                console.log("Area not defined");
+            }
+        }
+
+        class Square extends Shape {
+            area() {
+                console.log("Area = side * side");
+            }
+        }
+
+        class Circle extends Shape {
+            area() {
+                console.log("Area = πr²");
+            }
+        }
+
+        const shapes = [new Square(), new Circle()];
+
+        shapes.forEach(shape => shape.area());
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Execution Context</title>
+    <script src="30Execution_context.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background:none;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(to right, #3494e6, #ec6ead);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-family: cursive;
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .content {
+            padding: 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            /* transform: translateY(-5px); */
+            box-shadow: 0 2px 20px red ;
+        }
+        
+        h2 {
+            color: #3494e6;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        h3 {
+            color: #ec6ead;
+            margin: 20px 0 10px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        pre {
+            background: #f8f8f8;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 15px 0;
+            border-left: 4px solid #3494e6;
+        }
+        
+        code {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9rem;
+        }
+        
+        .visualization {
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        
+        .stack-container {
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: center;
+            margin: 20px 0;
+        }
+        
+        .stack-item {
+            width: 200px;
+            padding: 15px;
+            margin: 5px 0;
+            text-align: center;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        
+        .global {
+            background: #3498db;
+        }
+        .global:hover{
+            background: #2ecc71;
+        }
+        
+        .function {
+           
+            background: #3498db;
+        }
+        .function:hover{
+            background: #2ecc71;
+        }
+        
+        .eval {
+            background: #e74c3c;
+        }
+        
+        .summary {
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            padding: 25px;
+            border-radius: 10px;
+            color: white;
+            margin-top: 30px;
+        }
+        
+        .summary h2 {
+            color: white;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            color: #333;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: #3494e6;
+            color: white;
+        }
+        
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        
+        .diagram {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .diagram img {
+            max-width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: white;
+            background: linear-gradient(to right, #0088ff, #ff0080);
+            margin-top: 30px;
+        }
+        footer:hover{
+           box-shadow: 0 2px 20px red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Execution Context in JavaScript</h1>
+            <p class="subtitle">Understanding how JavaScript code is executed under the hood</p>
+        </header>
+        
+        <div class="content">
+            <div class="card">
+                <h2>What is Execution Context?</h2>
+                <p>An <strong>Execution Context</strong> is an abstract concept that refers to the environment in which JavaScript code is evaluated and executed. Think of it as a "workspace" or a "container" that holds all the information necessary to run a specific piece of code, such as variables, functions, and the scope chain.</p>
+                <p>Whenever any code is run in JavaScript, it's run inside an execution context.</p>
+                
+                <h3>Visual Representation</h3>
+                <div class="stack-container">
+                    <div class="stack-item function">Function EC</div>
+                    <div class="stack-item global">Global EC</div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2>Types of Execution Contexts</h2>
+                <p>There are three main types of execution contexts:</p>
+                
+                <h3>1. Global Execution Context (GEC)</h3>
+                <ul>
+                    <li>This is the <strong>default</strong> or <strong>base</strong> context</li>
+                    <li>It is created <strong>once</strong> when the JavaScript script first starts to execute</li>
+                    <li>It's associated with the global object (<code>window</code> in browsers, <code>global</code> in Node.js)</li>
+                    <li>All global variables and functions are stored inside the GEC</li>
+                </ul>
+                
+                <h3>2. Function Execution Context (FEC)</h3>
+                <ul>
+                    <li>A new FEC is created <strong>every time a function is invoked (called)</strong></li>
+                    <li>Each function call gets its own independent execution context</li>
+                    <li>The code inside the function is executed within this context</li>
+                </ul>
+                
+                <h3>3. Eval Execution Context</h3>
+                <ul>
+                    <li>Code executed inside the <code>eval()</code> function gets its own context</li>
+                    <li>Generally considered dangerous and bad practice</li>
+                    <li>Rarely used in modern JavaScript</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h2>The Execution Context Stack (Call Stack)</h2>
+                <p>Since JavaScript is single-threaded, it can only execute one thing at a time. To manage the creation and execution of these multiple contexts, the JavaScript engine uses a <strong>Call Stack</strong> (also known as the Execution Context Stack).</p>
+                
+                <pre><code>function firstFunction() {
+  console.log("This is first function");
+  secondFunction(); // Call second function
+}
+
+function secondFunction() {
+  console.log("This is second function");
+}
+
+firstFunction(); // Call first function
+console.log("This is global context");</code></pre>
+                
+                <h3>How the Call Stack Works</h3>
+                <ul>
+                    <li>The stack is <strong>LIFO</strong> (Last-In, First-Out)</li>
+                    <li>When the script loads, the <strong>Global EC</strong> is created and pushed onto the stack</li>
+                    <li>When a function is called, a new <strong>Function EC</strong> is pushed on top of the stack</li>
+                    <li>When the function finishes, its EC is popped off the stack</li>
+                    <li>This continues until the global context is popped off</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h2>Phases of Execution Context</h2>
+                
+                <h3>Phase 1: Creation Phase (Hoisting)</h3>
+                <p>Before code execution, the JavaScript engine sets up the context:</p>
+                <ul>
+                    <li>Creates the <strong>Variable Object (VO)</strong> (also called the <strong>Lexical Environment</strong>)</li>
+                    <li>Scans for function declarations - creates properties in VO pointing to functions</li>
+                    <li>Scans for variable declarations - creates properties in VO initialized to <code>undefined</code></li>
+                    <li>Determines the value of <code>this</code></li>
+                    <li>Creates the <strong>Scope Chain</strong></li>
+                </ul>
+                
+                <h3>Phase 2: Execution Phase</h3>
+                <p>The code is executed line-by-line:</p>
+                <ul>
+                    <li>Values are assigned to variables</li>
+                    <li>Functions are executed (creating new Function ECs)</li>
+                </ul>
+                
+                <h3>Hoisting Example</h3>
+                <pre><code>console.log(myVar); // Output: undefined
+console.log(sayHello()); // Output: "Hello!"
+
+var myVar = 10;
+
+function sayHello() {
+  return "Hello!";
+}</code></pre>
+            </div>
+        </div>
+        
+        <div class="summary">
+            <h2>Summary</h2>
+            <table>
+                <tr>
+                    <th>Concept</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td><strong>Execution Context</strong></td>
+                    <td>The environment where JS code is executed. Contains all necessary information (variables, functions, scope).</td>
+                </tr>
+                <tr>
+                    <td><strong>Global EC</strong></td>
+                    <td>The base context for all code not inside a function. Created once.</td>
+                </tr>
+                <tr>
+                    <td><strong>Function EC</strong></td>
+                    <td>A new context created every time a function is called.</td>
+                </tr>
+                <tr>
+                    <td><strong>Call Stack</strong></td>
+                    <td>A LIFO stack that manages the order of execution contexts.</td>
+                </tr>
+                <tr>
+                    <td><strong>Creation Phase</strong></td>
+                    <td>Sets up the Variable Object (hoisting), determines <code>this</code>, and creates the Scope Chain.</td>
+                </tr>
+                <tr>
+                    <td><strong>Execution Phase</strong></td>
+                    <td>Runs the code line-by-line, assigning values and executing functions.</td>
+                </tr>
+            </table>
+        </div>
+        
+        <footer>
+            <p>JavaScript Execution Context Explained | Created by Ankit Thakur</p>
+        </footer>
+    </div>
+</body>
+</html>

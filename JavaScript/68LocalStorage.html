@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture 68</title>
+    <style>
+        pre span{
+            font-size: 25px;
+            font-weight: 700;
+        }
+    </style>
+    <script src="68LocalStorage.js" defer></script>
+</head>
+
+<body>
+    <h1>Hii, <span class="name-tag"></span></h1>
+    <input type="text" class="input-field">
+    <br><br><br>
+    <h2>Local Storage</h2>
+    <p>Local Storage in JavaScript is a client-side Web Storage API that enables web apps to store persistent key-value
+        data (as strings) in the browser, surviving page reloads and sessions, with a typical limit of 5-10 MB per
+        domain. Access via window.localStorage methods like setItem(), getItem(), and removeItem().</p>
+
+    <pre>
+    <span>Key Characteristics</span>
+
+    Data Type: Stores data as key-value pairs where both keys and values are strings. To store complex data (like objects or arrays), you must serialize it (e.g., using JSON.stringify()) and deserialize it later (e.g., JSON.parse()).
+    Persistence: Data remains until explicitly deleted by the user (e.g., clearing browser data) or via code.
+    Scope: Global per origin—shared across all tabs/windows of the same site.
+    Quotas: Browser-enforced limits. Exceeding them throws a QuotaExceededError. Modern browsers like Chrome allow ~10 MB, Firefox ~10 MB, Safari ~5 MB.
+    Browser Support: Excellent—supported in all major browsers (IE8+ with limitations). Check via if (typeof(Storage) !== "undefined") { /* localStorage is available */ }.
+
+    <span>Core Methods and Properties</span>
+
+    The localStorage object is accessible globally via window.localStorage. Here are the main APIs:
+
+    setItem(key, value): Stores a value under the given key.
+    Overwrites if the key exists.
+    Example:
+        localStorage.setItem('username', 'john_doe');
+        localStorage.setItem('userSettings', JSON.stringify({ theme: 'dark', notifications: true }));
+
+    getItem(key): Retrieves the value for a key. Returns null if the key doesn't exist.
+    Example:
+        const username = localStorage.getItem('username'); // 'john_doe'
+        const settings = JSON.parse(localStorage.getItem('userSettings') || '{}'); // { theme: 'dark', notifications: true }
+
+    removeItem(key): Deletes the item with the given key.
+    Example:
+        localStorage.removeItem('username'); // Now getItem('username') returns null
+
+    clear(): Removes all items from localStorage for the origin.
+    Use sparingly—it's destructive!
+    Example:
+        localStorage.clear(); // Wipes everything
+
+    key(index): Returns the key at the given index (0-based). Useful for iterating.
+    Example:
+        for (let i = 0; i &lt; localStorage.length; i++) {
+        const key = localStorage.key(i);
+        console.log(key + ': ' + localStorage.getItem(key));
+        }
+
+    length: A read-only property returning the number of stored items.
+    Example:
+        console.log(localStorage.length); // e.g., 2
+    
+    <span>Events</span>
+
+    LocalStorage dispatches a **storage event** when data changes in another tab/window (not the current one, to avoid loops). Listen via window.addEventListener('storage', handler)`.
+
+    Event properties: key, oldValue, newValue, url, storageArea.
+
+    Example handler:
+    window.addEventListener('storage', (e) => {
+    if (e.key === 'username' && e.newValue) {
+        console.log('Username updated in another tab:', e.newValue);
+    }
+    });</pre>
+
+
+</body>
+
+</html>

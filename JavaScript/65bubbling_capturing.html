@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture 65</title>
+    <script src="65bubbling_capturing.js" defer></script>
+    <style>
+        .green {
+            border: 1px solid black;
+            height: 350px;
+            width: 400px;
+            background-color: green;
+        }
+
+        .hotpink {
+            border: 1px solid red;
+            background: hotpink;
+            height: 250px;
+            width: 300px;
+            margin-top: 45px;
+            margin-left: 45px;
+        }
+
+        .aqua {
+            border: 1px solid red;
+            background: aqua;
+            height: 150px;
+            width: 200px;
+            margin-top: 50px;
+            margin-left: 47px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h3>Bubbling : </h3>
+    <p>Bubbling is useful for handling events in parent elements without attaching listeners to every child (e.g., a list item click handled by the entire list).</p>
+
+    <h3>Capturing : </h3>
+    <p>Capturing is handy for "pre-emptive" handling, like stopping an event before it reaches a child (e.g., a modal overlay capturing clicks to prevent them from bubbling to the background).</p>
+
+
+
+    <div class="green">
+        <div class="hotpink">
+            <div class="aqua"></div>
+        </div>
+    </div>
+
+</body>
+
+</html>

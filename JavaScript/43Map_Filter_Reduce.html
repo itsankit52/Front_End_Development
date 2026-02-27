@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture 43</title>
+    <script src="43Map_Filter_Reduce.js"></script>
+</head>
+
+<body style="padding: 12px; border-radius: 50px ; box-shadow: 1px 2px 10px black;">
+    <h1>Map, Filter, and Reduce in Java Script.</h1>
+    <h2><b>1. map()</b> Method</h2>
+    <p>It creates a new array by applying a function to each element of the original array.</p>
+    <p>(It doesn't change the original array).</p>
+    <h3>Explanation.</h3>
+    <p>The <b>map()</b> goes through each element of numbers.</p>
+    <p>Applies <b>num * 2</b> to each.</p>
+    <p>Returns a <b>new array</b> <b>[2, 4, 6, 8, 10]</b>.</p>
+    <hr>
+
+    <h2><b>2. filter()</b> Method</h2>
+    <p>It creates a new array contaning only the elements that pass a certain test(condition).</p>
+    <h3>Explanation.</h3>
+    <p><b>filter()</b> checks each <b>num</b>.</p>
+    <p>Only keeps values where the condition <b>num > 30</b> is <b>true</b>.</p>
+    <p>Returns a new array <b>[45, 60]</b>.</p>
+    <hr>
+    <h2><b>3. reduce()</b> Method</h2>
+    <p>It reduces the array to a single value (like... sum, average, or object).</p>
+    <p>It runs a function on each element while keeping an accumulator.</p>
+    <h3>Explanation.</h3>
+    <p><b>acc</b> starts from <b>0</b> (initial value).</p>
+    <p>On each step, adds the current <b>num</b> to <b>acc</b>.</p>
+    <hr>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encapsulation in js</title>
+</head>
+
+<body>
+    <h1>Encapsulation</h1>
+    <p>Encapsulation means wrapping data (variables) and methods (functions) into a single unit (object/class) and
+        restricting direct access to data.</p>
+
+    <script>
+        class BankAccount {
+            #balance;   // private variable
+
+            constructor(amount) {
+                this.#balance = amount;
+            }
+
+            deposit(amount) {
+                this.#balance += amount;
+            }
+
+            getBalance() {
+                return this.#balance;
+            }
+        }
+
+        const acc = new BankAccount(1000);
+        acc.deposit(500);
+        console.log(acc.getBalance());  // 1500
+
+        // acc.#balance // Error
+
+    </script>
+</body>
+
+</html>

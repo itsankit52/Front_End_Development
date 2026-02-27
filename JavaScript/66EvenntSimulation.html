@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Simulators</title>
+    <script src="66EvenntSimulation.js" defer></script>
+    <style>
+        h1 {
+            background-color: brown;
+        }
+
+        .container {
+            color: green;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .card {
+            color: aqua;
+            width: 100px;
+            height: 100px;
+            background-color: rgba(93, 0, 16, 0.717);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50% 1px;
+            font-size: 36px;
+        }
+
+        .add-card {
+            cursor: pointer;
+            background-color: cadetblue;
+            color: black;
+            position: absolute;
+            bottom: 33px;
+            right: 32px;
+            border-radius: 100%;
+            height: 50px;
+            width: 50px;
+            line-height: 10px;
+        }
+    </style>
+</head>
+
+<body style="font-family: cursive;">
+    <h1>Event Simulators</h1>
+    <div class="container">
+        <div class="card add-card" title="Add New Card">+</div>
+        <form action="/">
+            <input type="text">
+            <input type="text">
+            <button type="reset">Button</button>
+        </form>
+    </div>
+</body>
+
+</html>

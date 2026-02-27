@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture 46</title>
+    <script src="46ES6_default_parameters.js"></script>
+</head>
+
+<body>
+    <h1>ES6 Means "ECMAScript 2015"</h1>
+    <p>default parameters allow to set a default value for function parameters.</p>
+    <p>If no value is passed for that parameter (or undefined is passed), the default value will be used.</p>
+    <h2>Basic Syntax</h2>
+    <pre>   function greet(name = "Guest")
+     {
+        console.log("Hello " + name);
+     }
+        greet();            // Output: Hello Guest
+        greet("Piyush");    // Output: Hello Piyush</pre>
+
+    <h3>Explation of this code.</h3>
+    <pre>    name = "Guest" → sets "Guest" as the default value.
+    
+    When greet() is called without any argument, it uses the default "Guest".
+    
+    When greet("Piyush") is called, the default value is replaced with "Piyush".</pre>
+</body>
+
+</html>

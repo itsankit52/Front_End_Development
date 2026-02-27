@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hosting in JS</title>
+    <script src="32Hosting.js"></script>
+</head>
+
+<body>
+    <h1>What is Hosting in Java Script.</h1>
+    <p>Hosting is a JavaScript mechanism where variable and function declarations are moved to the top of their
+        containing scope (either the global scope or a function) during the compilation phase, before the code is
+        executed.</p>
+
+    <hr>
+    <h3>The Detailed Explanation</h3>
+    <p>1.Compilation Phase: The JS engine scans the code and registers all declarations (variables with var, let, const,
+        and functions).</p>
+    <p>2.Execution Phase: The code is executed line by line</p>
+
+    <hr>
+    <h3>How hosting works for different declaration.</h3>
+    <p>Hosting doesn't behave the same for all declaration. This is a common source of confusion and bugs.</p>
+    <h4>1. "var" declarations</h4>
+    <p>The declaration (e.g.,<b>myVar;</b>) is hoisted to the top.</p>
+    <p>It is initialized with the value <b>undefined</b>.</p>
+    <p>The assignment (e.g., <b>myVar = 5;</b>) stays in place.</p>
+    <h4>2. "let" and "const" declarations(ES6).</h4>
+    <p>The declaration is hoisted to the top.</p>
+    <p>However, they are <b>not initialized</b>.</p>
+    <p>They enter a <b>"Temporal Dead Zone (TDZ)"</b> from the start of the block until the line where they are
+        declared. Accessing them in the TDZ causes a <b>ReferenceError</b>.</p>
+
+    <h4>3. Function Declarations</h4>
+    <p><b>The entire function</b> (both its name and body) is hoisted.</p>
+    <p>This means you can call a function before it's written in your code.</p>
+    <h4>4. Function Expressions.</h4>
+    <p>Function expressions follow the hosting rules of the variable they are assigned to.</p>
+    <p>A <b>var</b> function expression will be hoisted as <b>undefined</b>.</p>
+    <p>A <b>let</b> or <b>const</b> function expression will throw a ReferenceError if accessed before the declaration.
+    </p>
+</body>
+
+</html>

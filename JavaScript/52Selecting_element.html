@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Selecting Elements Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+
+        #title {
+            color: darkblue;
+        }
+
+        .text {
+            color: darkgreen;
+        }
+
+        .box {
+            text-align: center;
+            width: 100px;
+            height: 50px;
+            background-color: coral;
+            margin: 10px 0;
+        }
+
+        .item {
+            color: rgb(255, 0, 183);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- getElementById -->
+    <h1 id="title">Hello, World!</h1>
+
+    <!-- getElementsByClassName -->
+    <p class="text">This is paragraph one.</p>
+    <p class="text">This is paragraph two.</p>
+
+    <!-- getElementsByTagName -->
+    <div>First div (by tag)</div>
+    <div>Second div (by tag)</div>
+
+    <!-- querySelector -->
+    <div class="box">Box 1</div>
+    <div class="box">Box 2</div>
+
+    <!-- querySelectorAll -->
+    <ul>
+        <li class="item">Apple</li>
+        <li class="item">Banana</li>
+        <li class="item">Mango</li>
+    </ul>
+
+    <button id="actionBtn">Click Me to Apply JS!</button>
+
+    <script src="52_se.js"></script>
+</body>
+
+</html>

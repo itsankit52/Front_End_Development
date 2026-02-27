@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventLoop and Callback queue in JS.</title>
+    <script src="37EventLoop_Callback.js"></script>
+</head>
+<body>
+    <h1>BODY</h1>
+    <h1>Event loop in Java Script</h1>
+
+    <p>JavaScript is single-threaded, meaning it executes one thing at a time. But still, it can handle asynchronous
+        tasks (like setTimeout, API calls, promises, etc.) without blocking</p>
+    <h2>How it works.</h2>
+    <p>1.<b>Call Stacks</b> - Js executes code line by line here.</p>
+    <p>2.<b>Web APIs (Browser APIs)</b> - When we use function like <b>setTimeout, fetch</b>, etc., the browser takes
+        care of them separately.</p>
+    <p>3.<b>Callback Queue (Task Queue / Message Queue) </b>- When the browser finishes those async tasks, their
+        <b>callbacks</b> are placed in the queue.
+    </p>
+
+    <p>4.<b>Event Loop</b> - Constantly checks: <br>i."Is the call stack is empty?" <br> ii. If yes, it pushes the
+        <b>first callback from the queue</b> into the call stack. </p>
+
+    <h1>CallBack Queue.</h1>
+    <pre>    It stores callbacks waiting to be executed after async tasks complete.
+
+    Example: setTimeout, setInterval, DOM events, etc.
+
+    The event loop takes these one by one and puts them on the call stack to run.</pre>
+</body>
+
+</html>

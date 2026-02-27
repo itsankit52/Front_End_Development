@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture 44 </title>
+    <script src="44Some&Every.js"></script>
+</head>
+
+<body>
+    <h2>Some and Every Array Method in JavaScript.</h2>
+    <p>The <b>some()</b> and <b>every()</b> array methods are used to <b>test elements</b> in an array against a
+        condition (a callback function). They return boolean values (<b>true or false</b>) and are <b>non-mutating</b>,
+        meaning they don’t change the original array.</p>
+
+
+    <h2>1. Array.prototype.some()</h2>
+    <h3>Purpose:</h3>
+    <p>Checks if at least one element in the array passes the test implemented by the callback function.</p>
+    <pre>       Syntax:
+            array.some(callback(element, index, array), thisArg)
+        </pre>
+    <h3>Returns;</h3>
+    <p>"true" if any element passes the test, otherwise "false".</p>
+
+    <h2>2. Array.prototype.every()</h2>
+    <h3>Purpose:</h3>
+    <p>Checks if all elements in the array pass the test implemented by the callback function.</p>
+    <pre>       Syntax:
+            array.every(callback(element, index, array), thisArg)
+        </pre>
+
+    <h3>Returns:</h3>
+    <p>true if all elements pass the test, otherwise false.</p>
+</body>
+
+</html>
