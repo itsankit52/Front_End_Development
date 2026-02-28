@@ -1,0 +1,42 @@
+<<<<<<< HEAD
+What is children prop in React?
+
+    children is a special prop in React that lets you pass components or elements between the opening and closing tag of another component.
+------------------------------------------------------------------------------------------------------------------------------------------
+What happens?
+
+    <h2> and <p> are passed to Card
+
+    Inside Card, they are available as props.children
+
+They get rendered inside the <div className="card">
+------------------------------------------------------------------------------------------------------------------------------------------
+Why children is useful?
+
+    To create reusable wrapper components (Card, Modal, Layout, Button, etc.)
+
+    To make components more flexible
+
+    To avoid repeating layout code
+=======
+What is children prop in React?
+
+    children is a special prop in React that lets you pass components or elements between the opening and closing tag of another component.
+------------------------------------------------------------------------------------------------------------------------------------------
+What happens?
+
+    <h2> and <p> are passed to Card
+
+    Inside Card, they are available as props.children
+
+They get rendered inside the <div className="card">
+------------------------------------------------------------------------------------------------------------------------------------------
+Why children is useful?
+
+    To create reusable wrapper components (Card, Modal, Layout, Button, etc.)
+
+    To make components more flexible
+
+    To avoid repeating layout code
+>>>>>>> 66f314288ddd009b0acdee949da20f8d50bffa2b
+-------------------------------------------------------------------------------------------------------------------------------------------

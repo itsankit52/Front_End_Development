@@ -1,0 +1,18 @@
+<<<<<<< HEAD
+.button {
+    height: 80px;
+    width: 80px;
+    border-radius: 18px;
+    border: 3px solid rgb(0, 255, 0);
+
+    color: rgb(69, 52, 52);
+=======
+.button {
+    height: 80px;
+    width: 80px;
+    border-radius: 18px;
+    border: 3px solid rgb(0, 255, 0);
+
+    color: rgb(69, 52, 52);
+>>>>>>> 4b0b7a63b307c54ea863a8d1d5c2251f719f3ac8
+}
