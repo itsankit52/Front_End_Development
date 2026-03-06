@@ -8,28 +8,52 @@ export default function ExpenseForm({ setExpenses }) {
     {
       title: '',
       category: '',
-      amount: ''
+      amount: '',
+      email: ''
     }
   )
 
   // Show Error 
   const [Error, setError] = useState({});
 
+  const configuration = {
+    title: [{ required: true, message: 'Please Enter title' }, { minLength: 4, message: 'Title should be at least 4 characters long' }],
+    category: [{ required: true, message: 'Please Select a category' }],
+    amount: [{ required: true, message: 'Please Enter amount' }],
+    email: [{ required: true, message: 'Please Enter Email' }]
+  }
   const validation = (FormData) => {
 
     const errorData = {}
 
-    if (!FormData.title) {
-      errorData.title = 'Please Enter a Title...'
-    }
+    Object.entries(FormData).forEach(([key, value]) => {
+      configuration[key].some((rule) => {
+        if (rule.required && !value) {
+          errorData[key] = rule.message;
+          return true;
+        }
 
-    if (!FormData.category) {
-      errorData.category = 'Select a Category...'
-    }
+        // this is for title length 
+        if (rule.minLength && value.length < 4) {
+          errorData[key] = rule.message;
+          return true;
+        }
 
-    if (!FormData.amount) {
-      errorData.amount = 'Please enter Amount...'
-    }
+
+      });
+    })
+
+    // if (!FormData.title) {
+    //   errorData.title = 'Please Enter a Title...'
+    // }
+
+    // if (!FormData.category) {
+    //   errorData.category = 'Select a Category...'
+    // }
+
+    // if (!FormData.amount) {
+    //   errorData.amount = 'Please Enter Amount...'
+    // }
 
     setError(errorData);
     return errorData;
@@ -92,6 +116,14 @@ export default function ExpenseForm({ setExpenses }) {
           onChange={handleChange}
           error={Error.amount}
           placeholder="Enter Amount" />
+
+        {/* <Input label="Email"
+          id="email"
+          name="email"
+          value={expens.email}
+          onChange={handleChange}
+          error={Error.email}
+          placeholder="Enter email" /> */}
 
         <button className="add-btn">Add</button>
 
