@@ -48,6 +48,20 @@ function App() {
     setOrder(order === "ASC" ? "DESC" : "ASC");
   };
 
+
+  const sortByName = () => {
+    const sorted = [...users].sort((a, b) => {
+      if (order === "ASC") {
+        return a.name.localeCompare(b.name);
+      } else {
+        return b.name.localeCompare(a.name);
+      }
+    });
+
+    setUsers(sorted);
+    setOrder(order === "ASC" ? "DESC" : "ASC");
+  };
+
   return (
     <>
       <div className="t-body">
@@ -57,7 +71,7 @@ function App() {
           <thead>
             <tr>
               <th className="btn" onClick={sortById}>Sort By Id ⇕</th>
-              <th className="id-name">Name</th>
+              <th className="btn" onClick={sortByName}>Sort By Name ⇕</th>
               <th className="btn" onClick={sortByAge} >
                 Sort By Age ⇕
               </th>
@@ -78,9 +92,7 @@ function App() {
           </tbody>
 
         </table>
-        <tr className="btn-clear">
-          <th onClick={clearSort}> Clear </th>
-        </tr>
+        <button className="btn-clear" onClick={clearSort}>Clear</button>
 
       </div>
     </>
