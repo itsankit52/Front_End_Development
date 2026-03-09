@@ -38,7 +38,7 @@ function App() {
   return (
     <>
       <div className="t-body">
-        <h2>React Sortable Table</h2>
+        <h2>Sortable Table</h2>
 
         <table border="1" cellPadding="10">
           <thead>
