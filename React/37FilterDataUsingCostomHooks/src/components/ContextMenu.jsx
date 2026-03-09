@@ -4,7 +4,9 @@ export default function ContextMenu({
   menuPosition,
   setMenuPosition,
   rowId,
-  setExpenses
+  setExpens,
+  setExpenses,
+  rowId
 }) {
 
   const handleDelete = () => {
@@ -18,11 +20,11 @@ export default function ContextMenu({
       style={{
         top: menuPosition.top,
         left: menuPosition.left,
-        
+
       }}
     >
-      <div onClick={handleDelete}>Edit</div>
-      <div>Delete</div>
+      <div onClick={handleDelete}>Delete</div>
+      <div>Edit</div>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ContextMenu from "./ContextMenu";
 
-export default function Table({ expenses, setExpenses }) {
+export default function Table({ expenses, setExpens, setExpenses }) {
 
   const [category, setCategory] = useState("");
   const [menuPosition, setMenuPosition] = useState(null);
@@ -24,6 +24,7 @@ export default function Table({ expenses, setExpenses }) {
           rowId={rowId}
           setExpenses={setExpenses}
           setMenuPosition={setMenuPosition}
+          setExpens={setExpens}
         />
       )}
 

@@ -1,16 +1,8 @@
-import React, {useState } from 'react'
+import React, { useState } from 'react'
 import Input from './input';
 import SelectMenu from './SelectMenu';
 
-export default function ExpenseForm({ setExpenses }) {
-  //All in one method
-  const [expens, setExpens] = useState(
-    {
-      title: '',
-      category: '',
-      amount: ''
-    }
-  )
+export default function ExpenseForm({ setExpenses, expens, setExpens }) {
 
   // Show Error 
   const [Error, setError] = useState({});

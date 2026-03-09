@@ -1,0 +1,44 @@
+.t-body{
+    display: flex;
+    align-items: center;
+    /* justify-content: space-around; */
+    flex-direction: column;
+}
+
+.btn {
+    cursor: pointer;
+    background-color: rgb(17, 0, 255);
+    border-radius: 50%;
+    color: #ffffff;
+}
+
+.btn:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.673);
+}
+
+.btn-clear {
+
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: rgb(255, 0, 217);
+    border-radius: 12px;
+    color: #ffffff;
+    height: 40px;
+    width: 28%;
+}
+
+.btn-clear:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.673);
+}
+
+.id-name {
+    background-color: rgba(207, 70, 225, 0.711);
+    font-weight: 100;
+    border-radius: 12px;
+}
