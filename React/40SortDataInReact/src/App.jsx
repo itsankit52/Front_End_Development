@@ -4,10 +4,10 @@ import './App.css'
 function App() {
 
   const [initialUsers] = useState([
-    { id: 1, name: "Ankit", age: 22 },
-    { id: 2, name: "Piyush", age: 20 },
-    { id: 3, name: "Raju", age: 25 },
-    { id: 4, name: "Bam", age: 21 }
+    { id: 2, name: "Ankit", age: 22 },
+    { id: 1, name: "Piyush", age: 20 },
+    { id: 4, name: "Raju", age: 25 },
+    { id: 3, name: "Bam", age: 21 }
   ]);
 
 
@@ -21,6 +21,19 @@ function App() {
     setOrder("ASC");          // reset order
   };
 
+  const sortById = () => {
+
+    const sorted = [...users].sort((a, b) => {
+      if (order === "ASC") {
+        return a.id - b.id;   // ascending by id
+      } else {
+        return b.id - a.id;   // descending by id
+      }
+    });
+
+    setUsers(sorted);
+    setOrder(order === "ASC" ? "DESC" : "ASC");
+  };
   const sortByAge = () => {
 
     const sorted = [...users].sort((a, b) => {
@@ -43,17 +56,18 @@ function App() {
         <table border="1" cellPadding="10">
           <thead>
             <tr>
-              <th className="id-name">ID</th>
+              <th className="btn" onClick={sortById}>Sort By Id ⇕</th>
               <th className="id-name">Name</th>
               <th className="btn" onClick={sortByAge} >
-                Sort ⇕
+                Sort By Age ⇕
               </th>
-
             </tr>
+
+
           </thead>
 
 
-          <tbody>
+          <tbody className="list">
             {users.map((user) => (
               <tr key={user.id}>
                 <td>{user.id}</td>
@@ -64,9 +78,9 @@ function App() {
           </tbody>
 
         </table>
-        <th className="btn-clear" onClick={clearSort}>
-          Clear
-        </th>
+        <tr className="btn-clear">
+          <th onClick={clearSort}> Clear </th>
+        </tr>
 
       </div>
     </>
