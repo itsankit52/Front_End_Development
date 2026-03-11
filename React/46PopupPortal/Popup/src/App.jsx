@@ -1,13 +1,15 @@
-import { useState } from 'react'
+
+import { Outlet } from 'react-router-dom'
 import './App.css'
 import Header from './components/Header'
-import Modal from './components/Model'
 
 function App() {
   return (
     <>
       <Header />
-      <Modal />
+      <main className="py-4 px-4 md:px-8">
+        <Outlet />
+      </main>
     </>
   )
 }
