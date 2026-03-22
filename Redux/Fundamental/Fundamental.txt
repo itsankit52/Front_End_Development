@@ -1,0 +1,25 @@
+** What is Redux : **
+    Redux is a state management library used mainly in JavaScript apps (especially with React) to manage and centralize application data (state).
+
+** Why Redux is Used? ** 
+    In large apps (like your DevCollab project), data needs to be shared between many components.
+
+** Without Redux: ** 
+    1. Props drilling (passing data through many components)
+    2. Hard to manage state
+
+** With Redux: **
+   1. Global state accessible anywhere
+   2. Clean and organized data flow
+
+** Core Concepts of Redux **
+1. Store : Central place where all data (state) is stored
+
+2. Action : An object that tells what happened
+
+3. Reducer : A function that decides how state changes
+
+4. Dispatch : Used to send actions to reducer
+
+** Redux Flow **
+    Component → Dispatch → Action → Reducer → Store → UI Update
