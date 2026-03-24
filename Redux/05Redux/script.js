@@ -3,17 +3,13 @@ import { combineReducers, createStore } from 'redux'
 
 // Import reducers
 import productsReducer from './productsReducer'
-
-import cartReducer, {
-    CART_ADD_ITEM,
-    CART_ITEM_DECREASE_QUANTITY,
-    CART_ITEM_INCREASE_QUANTITY,
-} from './cartReducer'
-
-import wishListReducer, {
-    WISHLIST_ADD_ITEM,
-    WISHLIST_REMOVE_ITEM,
-} from './wishListReducer'
+import DECREASE_QUANTITY from './cartReducer'
+import INCREASE_QUANTITY from './cartReducer'
+import ADD_ITEMS from './cartReducer'
+import WISHLIST_ITEMS from './wishListReducer'
+import REMOVE_WISHLIST_ITEMS from './wishListReducer'
+import cartReducer from './cartReducer'
+import wishListReducer from './wishListReducer'
 
 
 // Combine all reducers into one root reducer
@@ -36,38 +32,33 @@ const store = createStore(
 // Print store object (structure + methods)
 console.log(store)
 
-
 // ---------------- CART OPERATIONS ----------------
 
 // Add item with productId = 1 and quantity = 1
-store.dispatch({ type: CART_ADD_ITEM, payload: { productId: 1, quantity: 1 } })
-
+store.dispatch(ADD_ITEMS(1, 1))
+// console.log(ADD_ITEMS(1, 1));
 // Add another item with productId = 12
-store.dispatch({ type: CART_ADD_ITEM, payload: { productId: 12, quantity: 1 } })
+store.dispatch(ADD_ITEMS(12, 2))
 
 // Increase quantity of productId = 12
-store.dispatch({ type: CART_ITEM_INCREASE_QUANTITY, payload: { productId: 12 } })
+store.dispatch(INCREASE_QUANTITY(12))
 
 // Decrease quantity of productId = 12
-store.dispatch({ type: CART_ITEM_DECREASE_QUANTITY, payload: { productId: 12 } })
-
-// Decrease again (may remove item if quantity becomes 0)
-store.dispatch({ type: CART_ITEM_DECREASE_QUANTITY, payload: { productId: 12 } })
+store.dispatch(DECREASE_QUANTITY(10))
+store.dispatch(DECREASE_QUANTITY(12))
 
 // ---------------- WISHLIST OPERATIONS ----------------
 
 // Add productId = 18 to wishlist
-store.dispatch({ type: WISHLIST_ADD_ITEM, payload: { productId: 18 } })
-
+store.dispatch(WISHLIST_ITEMS(18))
 // Add productId = 11 to wishlist
-store.dispatch({ type: WISHLIST_ADD_ITEM, payload: { productId: 11 } })
+store.dispatch(WISHLIST_ITEMS(11))
 
 // Remove productId = 11 from wishlist
-store.dispatch({ type: WISHLIST_REMOVE_ITEM, payload: { productId: 11 } })
+store.dispatch(REMOVE_WISHLIST_ITEMS(11))
 
 // Remove productId = 18 from wishlist
-store.dispatch({ type: WISHLIST_REMOVE_ITEM, payload: { productId: 18 } })
-
+store.dispatch(REMOVE_WISHLIST_ITEMS(18))
 
 // Print final state after all operations
 console.log(store.getState())

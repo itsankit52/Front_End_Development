@@ -1,6 +1,21 @@
 
-export const WISHLIST_ADD_ITEM = 'wishList/addItem'
-export const WISHLIST_REMOVE_ITEM = 'wishList/removeItem'
+const WISHLIST_ADD_ITEM = 'wishList/addItem'
+const WISHLIST_REMOVE_ITEM = 'wishList/removeItem'
+
+
+/************ ACTION CREATOR FUNCTION *************/
+
+// For add Items in WishList
+export function WISHLIST_ITEMS(productId) {
+  return { type: WISHLIST_ADD_ITEM, payload: { productId: { productId } } }
+
+}
+
+// For remove Items from WishList
+export function REMOVE_WISHLIST_ITEMS(productId) {
+  return { type: WISHLIST_REMOVE_ITEM, payload: { productId: { productId } } }
+
+}
 
 export default function wishListReducer(state = [], action) {
   switch (action.type) {

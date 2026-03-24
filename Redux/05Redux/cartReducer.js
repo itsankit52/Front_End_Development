@@ -1,8 +1,29 @@
+/************ACTION TYPES *************/
+const CART_ADD_ITEM = 'cart/addItem'
+const CART_REMOVE_ITEM = 'cart/removeItem'
+const CART_ITEM_INCREASE_QUANTITY = 'cart/increaseItemQuantity'
+const CART_ITEM_DECREASE_QUANTITY = 'cart/decreaseItemQuantity'
 
-export const CART_ADD_ITEM = 'cart/addItem'
-export const CART_REMOVE_ITEM = 'cart/removeItem'
-export const CART_ITEM_INCREASE_QUANTITY = 'cart/increaseItemQuantity'
-export const CART_ITEM_DECREASE_QUANTITY = 'cart/decreaseItemQuantity'
+/************ ACTION CREATOR FUNCTION *************/
+
+// For Add Items
+export function ADD_ITEMS(productId, quantity = 1) {
+  return { type: CART_ADD_ITEM, payload: { productId: { productId }, quantity: { quantity } } }
+
+}
+
+// For Increase
+export function INCREASE_QUANTITY(productId) {
+  return { type: CART_ITEM_INCREASE_QUANTITY, payload: { productId: { productId } } }
+
+}
+// For Decrease
+export function DECREASE_QUANTITY(productId) {
+  return { type: CART_ITEM_DECREASE_QUANTITY, payload: { productId: { productId } } }
+
+}
+
+/************ REDUCERS *************/
 
 export default function cartReducer(state = [], action) {
   switch (action.type) {
