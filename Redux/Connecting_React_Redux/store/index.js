@@ -23,17 +23,17 @@ const reducer = combineReducers({
 
 // Create Redux store
 // DevTools extension is added for debugging in browser
-const store = createStore(
+export const store = createStore(
     reducer,
     window.__REDUX_DEVTOOLS_EXTENSION__?.()
 )
 
 
 // Print store object (structure + methods)
-console.log(store)
+// console.log(store)
 
 // ---------------- CART OPERATIONS ----------------
-
+/*
 // Add item with productId = 1 and quantity = 1
 store.dispatch(ADD_ITEMS(1, 1))
 // console.log(ADD_ITEMS(1, 1));
@@ -59,6 +59,6 @@ store.dispatch(REMOVE_WISHLIST_ITEMS(11))
 
 // Remove productId = 18 from wishlist
 store.dispatch(REMOVE_WISHLIST_ITEMS(18))
-
+*/
 // Print final state after all operations
-console.log(store.getState())
+// console.log(store.getState())
