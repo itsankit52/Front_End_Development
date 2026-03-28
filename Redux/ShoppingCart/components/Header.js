@@ -1,17 +1,26 @@
 
 import React from 'react'
 import { Link } from 'react-router-dom'
-// import CartIcon from './cart-shopping-solid-full.svg'
+// import CartIcon from '../assets/cart-icon.svg'
+import { useSelector } from 'react-redux'
 
 export default function Header() {
+    const cartItems = useSelector((state) => state.cartItems)
+    console.log(cartItems)
     return (
         <header>
             <div className="header-contents">
                 <h1>
-                    <Link to="/">Shop</Link>
+                    <Link to="/">Shopee</Link>
                 </h1>
                 <Link className="cart-icon" to="/cart">
-                    <img src='cart-shopping-solid-full.svg' alt="cart-icon" />          <div className="cart-items-count">0</div>
+                    <img src='cart-shopping-solid-full.svg' alt="cart-icon" />
+                    <div className="cart-items-count">
+                        {cartItems.reduce(
+                            (accumulator, currentItem) => accumulator + currentItem.quantity,
+                            0
+                        )}
+                    </div>
                 </Link>
             </div>
         </header>
