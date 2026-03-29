@@ -4,6 +4,7 @@ import { addCartItem } from '../store/cartReducer'
 
 export default function Product({ productId, title, rating, price, imageUrl }) {
   const dispatch = useDispatch()
+  console.log(imageUrl)
   return (
     <div className="product">
       <div className="product-image">
