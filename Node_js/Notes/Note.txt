@@ -1,0 +1,113 @@
+STEP 1 : npm init -y
+STEP 2 : Create file 
+STEP 3 : "node fileName.js" run this in terminal
+
+
+
+What is Node.js?
+    Node.js is a runtime environment that allows you to run JavaScript outside the browser.
+
+    Before Node.js
+        JavaScript could only run in browsers (Chrome, Firefox), Used mainly for frontend
+
+    After Node.js
+        We can run Js on :
+        1. Servers
+        2. Computers
+        3. Backend applications
+
+    That Means : Js is no longer limited to frontend
+
+
+Running JavaScript Outside Browser
+     
+    Node uses : V8 Engine (From Chrome)
+
+    How it works :
+        We write JavaScript code -> node sends to it V8 engine -> V8 converts js to machine code -> code runs on system
+
+
+
+3️ How Node.js Works (Single Thread + Event Loop)
+
+    Single Thread
+        Node uses one main thread
+
+Meaning:
+    One task at a time
+    Not like Java (multi-thread heavy)
+
+BUT…
+Then how does it handle multiple users?
+
+Event Loop (Magic of Node.js )
+    Node is non-blocking + asynchronous
+
+
+Concept:
+Instead of waiting for a task to finish…
+    Node delegates it and moves on
+
+ Example:
+console.log("Start");
+
+setTimeout(() => {
+  console.log("Async Task");
+}, 2000);
+
+console.log("End");
+
+    Output:
+        Start
+        End
+        Async Task
+
+
+Why?
+    Because:
+        setTimeout goes to Web APIs / Background
+        Node continues execution
+        Event loop brings result later
+
+    Flow:
+        Call Stack
+        Async Task → Background
+        Callback Queue
+        Event Loop checks & executes
+
+    Simple line to remember:
+        Node.js does NOT wait — it works asynchronously
+
+
+Lecture 2 :
+
+What are Modules in Node.js
+    Module = a reusable piece of code, instead of writing everything in one file. We split code into multiples files
+
+Types of Modules 
+    1. Local Modules (Own file)
+        eg... math.js, index.js etc...
+
+        module.exports -> used to export somthings 
+
+        require() -> used to import somthings 
+    
+    2. Built-in modules : Node.js gives some modules by default
+        1. fs (file system module) : Used to handle file 
+
+          > Read File : const fs = require("fs");
+                        fs.readFile("test.txt", "utf8", (err, data) => {
+                        console.log(data);
+                        });
+
+
+           > Write file : const fs = require("fs");
+                        fs.writeFile("test.txt", "Hello Ankit!", () => {
+                        console.log("File created");
+                        });
+
+
+    3. Third-party modules (NPM) : installed using npm (npm i express)
+        eg.. const express = require("express");
+
+    
