@@ -16,12 +16,12 @@ fs.renameSync("C:\\Users\\ankit\\OneDrive\\Desktop\\value.txt","C:\\Users\\ankit
 fs.unlinkSync("C:\\Users\\ankit\\OneDrive\\Desktop\\NewName.txt")
 
 // Print output
-console.log(val.toString());
-console.log(value);
-console.log("File Renamed Successfully");
-console.log("End of code...");
+// console.log(val.toString());
+// console.log(value);
+// console.log("File Renamed Successfully");
+// console.log("End of code...");
 
-
+// This will open Google chrome  
 const { exec } = require('child_process');
 
 exec('"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe" https://www.google.com');
