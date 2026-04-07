@@ -1,0 +1,18 @@
+What is prompt in terminal? 
+    A prompt is the text shown in the terminal that indicates the system is ready to accept a command.
+
+    Symbol          meaning
+    $        ->     Normal User
+    #        ->     Admin / root user
+    >        ->     Common in windows 
+
+
+Why Prompt is Important? 
+    . Shows current location 
+    . Tells user type (normal / root)
+    . Indicates system ready state 
+
+FLOW : 
+    $ 
+    ls -> list of files 
+    $ -> it means ready for next commands

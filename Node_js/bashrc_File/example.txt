@@ -1,0 +1,27 @@
+What is .bashrc ?
+    .bashrc is a configuration file for the Bash shell that runs every time a new terminal session starts.
+
+    .bashrc = startup file for terminal settings
+
+    Location 
+        ~/.bashrc 
+        ~ = Home directory
+
+    What is stored in .bashrc file 
+
+    1. Aliases (shortcuts)
+        alias ll='ls -la' now we can use 'll'
+
+    2. Environment variables
+        export PORT = 5000
+
+    3. Custom prompt 
+        PS1="\u@\h:\w$ "
+
+    4. Startup Commands
+        Commands that euns automaticallu when terminal opens
+
+How to open .bashrc file
+    nano ~/.bashrc 
+    or
+    vim ~/.bashrc
