@@ -16,3 +16,26 @@ FLOW :
     $ 
     ls -> list of files 
     $ -> it means ready for next commands
+
+
+1. PS1 (Primary prompt)
+    PS1 is the main prompt shown when the terminal is ready for a new command.
+    eg..        ankit@laptop:~/Desktop$   -> This is PS1
+
+    Common PS1 codes
+
+    code            meaning
+    \u	    ->      Username
+    \h	    ->      Hostname
+    \w	    ->      Current directory
+    $	    ->      User symbol
+
+2. PS2 (Secondary prompt) : 
+    PS2 is the secondary prompt shown when a command is incomplete and needs more input.
+
+    eg..        echo HelloWorld
+                Output >
+
+                that is ">" PS2
+
+                
