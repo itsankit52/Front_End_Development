@@ -1,0 +1,92 @@
+What is an Operating System?
+    An Operating System (OS) is system software that acts as an interface between the user and computer hardware.
+
+    It manages hardware resources and provides services to application programs.
+
+    Exapmple : 
+        1. Windows
+        2. Linux
+        3. macOS
+        4. Android
+        5. iOS
+
+Functions of an OS : 
+
+    1. Process Management
+    . Handles creation, scheduling, and termination of processes
+    . Enables multitasking
+
+    2. Memory Management
+    . Allocates and deallocates RAM
+    . Keeps track of memory usage
+
+    3. File System Management
+    . Manages files and directories
+    . Controls access and permissions
+
+    4. Device Management
+    . Controls input/output devices (keyboard, printer, etc.)
+    . Uses device drivers
+
+    5. Security & Protection
+    . Prevents unauthorized access
+    . Uses authentication (passwords, permissions)
+
+    6. User Interface
+    . Provides CLI (Command Line Interface) and GUI (Graphical User Interface)
+
+
+Types of OS : 
+
+    1. Batch Operating System
+    . Executes jobs in batches
+    . No user interaction during execution
+
+    2. Time-Sharing OS
+    . Multiple users share CPU time
+    . Example: Unix
+
+    3. Distributed OS
+    . Multiple computers work as one system
+    4. Real-Time OS (RTOS)
+    . Provides quick response within fixed time
+    . Used in embedded systems
+
+    5. Multiprocessing OS
+    . Uses multiple CPUs
+
+    6. Multitasking OS
+    . Runs multiple tasks simultaneously
+
+5. Components of Operating System
+    . Kernel → Core part of OS
+
+    . Shell → Interface between user and kernel
+
+    . File System → Manages data storage
+
+    . Device Drivers → Controls hardware
+
+6. Important Concepts
+    . Process
+        A program in execution
+
+    . Thread
+        Smallest unit of execution
+
+    . Deadlock
+        When processes wait forever for resources
+
+    . Scheduling
+        Deciding which process runs next
+
+7. Advantages of Operating System
+    Easy to use
+    Efficient resource utilization
+    Multitasking support
+    Security and data protection
+
+8. Disadvantages
+    Cost (some OS are paid)
+    Security risks (viruses, malware)
+    Complexity
