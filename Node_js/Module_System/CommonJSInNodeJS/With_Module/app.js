@@ -1,5 +1,7 @@
-const add = require('./add');
-const multiply = require('./multiply');
+// const add = require('./add');
+// const multiply = require('./multiply');
+
+const { add, multiply } = require('./math') // import more than one function from another file using destructure
 
 console.log(`Sum is = ${add(1, 2, 3, 4, 5)}`);
 
