@@ -1,3 +1,3 @@
 #!node
 
-console.log("This is about NPX");
+console.log("This is NPX");
