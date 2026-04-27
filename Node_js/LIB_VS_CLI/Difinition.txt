@@ -1,0 +1,14 @@
+What is a Library?
+    A library is code that we import and use inside our program.
+    we don't run it directly 
+    we use it as a helper
+    eg... npm install express 
+
+
+What is CLI package? 
+    A CLI (Command Line Interface) package is something we run directly in terminal.
+    It behave like a commands 
+    Installed globally usally 
+    eg... 
+        npx create-react-app myproject 
+        here create-react-app is a CLI tool
