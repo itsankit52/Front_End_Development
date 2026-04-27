@@ -1,0 +1,20 @@
+// Common JS Module runs at runtime (synchronously), while ES6 Module runs are statically analyzed and loaded before execution (asynchronously). 
+
+// Common JS flow : Run code -> encoumter equire() -> load module -> continue 
+// File extension optional
+// We can load any file
+// set "type" : "commonjs" in package.json(optional)
+// this keyword point to module.exports by default
+// cjs imports are not hoisted
+
+// const timer = require ('./timer.js')
+
+
+
+// ES6 Module flow : Parse import -> load all modules -> execute code (This is why import must be at top level)
+// File extension mandatory 
+// We can not load any file, only js and mjs file allowed
+// mjs imports are hoisted
+// We can use await keyword at top level 
+// set "type" : "module" in package.json 
+// this keyword is "undefined" in ES6 

@@ -1,0 +1,21 @@
+{
+  "name": "25passdata_from_onepage_to_anotherpage",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "react-router-dom": "^6.30.3"
+  },
+  "devDependencies": {
+    "parcel": "^2.16.4"
+  }
+}

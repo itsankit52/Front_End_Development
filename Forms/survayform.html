@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+    <link rel="stylesheet" href="survay.css">
+</head>
+
+<body>
+    <h1 id="heading">Survey Form</h1>
+
+
+    <form>
+        <label for="name">*Name:</label><br>
+        <input type="text" id="name" name="name" placeholder="Enter your name"><br><br>
+
+        <label for="email">*Email:</label><br>
+        <input type="email" id="email" name="email" placeholder="Enter your email"><br><br>
+
+        <label for="age">*Age:</label><br>
+        <input type="number" id="age" name="age" placeholder="Age"><br><br>
+
+        <label for="phone">*Phone:</label><br>
+        <input type="number" id="phone" name="phone" placeholder="Phone Number"><br><br>
+
+        <label>*First time playing Escape Room?</label><br>
+        <select id="sel" name="first-time">
+            <option value="">Select an option</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select><br><br>
+
+        <label>*Which game you played?</label><br>
+        <input type="checkbox" id="Free Fire" name="game" value="Free Fire">
+        <label for="Free Fire">Free Fire</label><br>
+
+        <input type="checkbox" id="bgmi" name="game" value="BGMI">
+        <label for="bgmi">BGMI</label><br>
+
+        <input type="checkbox" id="subwaySuffers" name="game" value="SubwaySuffers">
+        <label for="subwaySuffers">Subway Suffers</label><br>
+
+        <input type="checkbox" id="minecraft" name="game" value="Mine Craft">
+        <label for="minecraft">Mine Craft</label><br>
+
+        <input type="checkbox" id="cod" name="game" value="COD">
+        <label for="cod">COD</label><br><br>
+
+       <div>
+         <input class="sumbitbutton" type="submit" value="Submit">
+       </div>
+        <p id="foot">Let us know how we can improve our service</p>
+        <!-- <span>&copy</span> -->
+    </form>
+</body>
+
+</html>

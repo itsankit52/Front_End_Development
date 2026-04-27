@@ -1,0 +1,36 @@
+What is Terminal?
+    Terminal is a program (interface) where we type commands to interact with our computer.
+     
+        Examples:
+            Windows → Command Prompt, PowerShell, Windows Terminal
+            Mac/Linux → Terminal
+
+What is Shell? 
+    Shell is a program that interprets your commands and tells the OS what to do.
+
+
+How Terminal & Shell Work Together
+    Type command → Terminal → Shell → Operating System → Output
+
+    Example : 
+        mkdir my_file
+            . type in Terminal
+            . Shell understands command
+            . OS creates folder
+            . Output shown in Terminal
+
+Types of Shell : 
+
+    1. Bash (Most Common)
+        . Used in Linux & Mac 
+        . Defaults shell in many Systems
+    
+    2. PowerShell 
+        . Used in Windows 
+        . More powerful than Command
+    
+    3. Zsh
+        . Advanced version of Bash (popular in developers)
+        
+        
+Terminal is where you type commands, Shell is what executes them.        

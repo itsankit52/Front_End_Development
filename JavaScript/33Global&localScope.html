@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Global & local Scope</title>
+    <script src="33Global&localScope.js"></script>
+    <style>
+        b{
+            font-size: 30px;
+        }
+        p{
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <pre><b>Global Scope vs Local Scope in JavaScript</b>
+<p>****Global Scope****</p>
+Variables declared outside of any function or block have global scope.
+
+// Global variable
+        let globalVar = "I'm global";
+
+        function showGlobal() {
+            console.log(globalVar); // Accessible here
+        }
+
+        showGlobal(); // "I'm global"
+        console.log(globalVar); // Also accessible here
+        Characteristics:
+
+    Accessible from anywhere in code
+
+    Exist for the lifetime of the application
+
+    Can cause naming conflicts and pollution
+
+<p>****Local Scope****</p>
+Variables declared inside a function or block have local scope.
+
+1.Function Scope (var)
+    function myFunction() {
+        var functionScoped = "I'm local";
+        console.log(functionScoped); // Accessible
+    }
+
+    myFunction();
+    console.log(functionScoped); // Error: functionScoped is not defined
+2.Block Scope (let, const) - ES6+
+    if (true) {
+        let blockScoped = "I'm block scoped";
+        const alsoBlockScoped = "Me too!";
+        console.log(blockScoped); // Accessible
+    }
+
+    console.log(blockScoped); // Error: blockScoped is not defined</pre>
+</body>
+
+</html>

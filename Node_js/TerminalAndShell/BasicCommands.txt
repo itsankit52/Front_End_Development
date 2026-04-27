@@ -1,0 +1,60 @@
+COMMANDS : 
+
+    1. "echo" - print something on screen
+        eg...   echo piyush -> piyush 
+
+    2. pwd (Print Working Directory) - Shows the current directory (location) you are working in.
+        eg...  pwd
+
+    3. ls (List) - Displays all files and folders inside the current directory.
+        eg...  ls
+
+    4. cd (Change Directory) - Used to move from one folder to another.
+        eg..  
+            cd Desktop
+            cd ..
+
+    5. mkdir (Make Directory) - Creates a new folder/directory.
+        eg...  mkdir newFolder
+
+    6. touch - Creates a new empty file 
+        eg...  touch app.js 
+
+    7. rm (Remove) - Deletes a file 
+        eg...  rm app.js
+    
+    8. rmdir - Deletes an empty folder.
+
+    9. cat (Concatenate) - Displays the content of a file in the terminal.
+        eg...  cat app.js 
+    
+    10. clear - clear the terminal 
+
+    11. cp (copy) - Copies files or folders from one location to another.
+        eg...  cp file.txt copy.txt 
+
+    12. mv (move / rename) - Moves or renames files and folders.
+        eg...  mv file.txt newfile.txt
+
+    13. nano - nano is a command-line text editor used to create and edit files directly in the terminal.
+        eg...  nano script.js
+
+        Shortcuts         Works
+        Ctrl + O	->    Save file
+        Enter   	->    Confirm save
+        Ctrl + X	->    Exit nano
+        Ctrl + K	->    Cut line
+        Ctrl + U	->    Paste line
+        Ctrl + W	->    Search text
+
+    14. vim - vim (Vi Improved) is a highly efficient terminal-based text editor used to create and edit files. 
+    vim = advanced nano (but harder)
+        eg...  vi script.js
+
+        Commands        Works
+        i	    ->      Enter insert mode
+        Esc     ->  	Exit insert mode
+        :w	    ->      Save file
+        :q	    ->      Quit
+        :wq     ->  	Save + Exit
+        :q!     ->  	Force exit (without saving)

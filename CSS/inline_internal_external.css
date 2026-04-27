@@ -1,0 +1,24 @@
+/* 
+1.Inline CSS: Applied directly within an HTML element using the style attribute.
+    Example: <p style="color: red;">Hello</p>
+
+
+2.Internal (Embedded) CSS: Defined inside the <style> tag within the <head> section of an HTML file.
+    Example:
+        html
+        <head>
+        <style> p { color: blue; } </style>
+        </head>
+
+
+3.External CSS: Stored in a separate .css file and linked to HTML using <link> tag>.
+    Example (in HTML):
+        html
+        <head>
+        <link rel="stylesheet" href="styles.css">
+        </head>
+        styles.css file:
+
+        css
+        p { color: green; } 
+*/

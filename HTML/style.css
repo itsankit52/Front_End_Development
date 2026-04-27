@@ -1,0 +1,28 @@
+p{
+    color: rgb(55, 0, 255);
+   
+} /*Element Selector*/
+
+#abc{
+    color: rgb(0, 0, 0);
+    font-style: italic;
+    font-size: 20px;
+    font-family: monospace; 
+    line-height: 50px;
+    
+
+}/* I'd Selector */
+
+.xyz{
+    color: rgb(43, 226, 144);
+} /* Class selector */
+
+p,xyz{
+    width: 500px ;
+
+} /*Group selector */
+
+img{
+    width: 200px;
+    height: 400px;
+}

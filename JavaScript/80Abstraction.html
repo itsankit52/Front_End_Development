@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abstractiont</title>
+</head>
+
+<body>
+    <h1>Abstraction</h1>
+    <p>Abstraction means hiding internal implementation details and showing only essential features.</p>
+
+    <script>
+        class Car {
+            start() {
+                this.#engineStart();
+                console.log("Car Start🚗");
+            }
+
+            #engineStart() {
+                console.log("Engine start inside");
+            }
+        }
+
+        const car = new Car();
+        car.start();
+
+        // car.#engineStart() //Error
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch Case in JavaScript</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-family: cursive;
+            color: blue;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            font-family: cursive;
+            color: #6c757d;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .syntax-box, .demo-box {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        pre {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-top: 15px;
+        }
+
+        .code-comment {
+            color: #75715e;
+        }
+
+        .code-keyword {
+            color: #f92672;
+        }
+
+        .code-value {
+            color: #a6e22e;
+        }
+
+        .demo-box {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input-group {
+            display: flex;
+            margin: 20px 0;
+        }
+
+        input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 5px 0 0 5px;
+            font-size: 16px;
+        }
+
+        button {
+            background: #4a6cf7;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #3556e8;
+        }
+
+        .output {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            min-height: 100px;
+            border-left: 4px solid #4a6cf7;
+        }
+
+        .output-text {
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        .day-circle {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 50%;
+            background: #4a6cf7;
+            color: white;
+            margin-right: 10px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .day-circle:hover {
+            transform: scale(1.1);
+        }
+
+        .days-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .explanation {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
+
+        .explanation h3 {
+            color: #4a6cf7;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .points {
+            list-style-type: none;
+        }
+
+        .points li {
+            margin-bottom: 10px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .points li i {
+            position: absolute;
+            left: 0;
+            top: 5px;
+            color: #4a6cf7;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            color: #6c757d;
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Switch Statement in JavaScript</h1>
+            <h2>Efficient Control Flow for Multiple Conditions</h2>
+        </header>
+
+        <div class="content">
+            <div class="syntax-box">
+                <h2>Syntax:</h2>
+                <pre><code><span class="code-keyword">switch</span> (expression) {
+    <span class="code-keyword">case</span> <span class="code-value">value1</span>:
+        <span class="code-comment">// Code to execute when expression === value1</span>
+        <span class="code-keyword">break</span>;
+    <span class="code-keyword">case</span> <span class="code-value">value2</span>:
+        <span class="code-comment">// Code to execute when expression === value2</span>
+        <span class="code-keyword">break</span>;
+    <span class="code-keyword">case</span> <span class="code-value">value3</span>:
+        <span class="code-comment">// Code to execute when expression === value3</span>
+        <span class="code-keyword">break</span>;
+    <span class="code-keyword">case</span> <span class="code-value">value4</span>:
+        <span class="code-comment">// Code to execute when expression === value4</span>
+        <span class="code-keyword">break</span>;
+    <span class="code-keyword">default</span>:
+        <span class="code-comment">// Code to execute if no cases match</span>
+}</code></pre>
+            </div>
+
+            <div class="demo-box">
+                <h2>Try It Out:</h2>
+                <p>Enter a number between 1 and 7 to get the day of the week:</p>
+                
+                <div class="input-group">
+                    <input type="number" id="dayInput" min="1" max="7" placeholder="Enter a number (1-7)">
+                    <button onclick="testDay()">Get Day</button>
+                </div>
+                
+                <div class="days-container">
+                    <span class="day-circle" onclick="setDay(1)">1</span>
+                    <span class="day-circle" onclick="setDay(2)">2</span>
+                    <span class="day-circle" onclick="setDay(3)">3</span>
+                    <span class="day-circle" onclick="setDay(4)">4</span>
+                    <span class="day-circle" onclick="setDay(5)">5</span>
+                    <span class="day-circle" onclick="setDay(6)">6</span>
+                    <span class="day-circle" onclick="setDay(7)">7</span>
+                </div>
+                
+                <div class="output">
+                    <p class="output-text" id="output">Result will appear here</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="explanation">
+            <h3>About Switch Statements</h3>
+            <ul class="points">
+                <li><i class="fas fa-check-circle"></i> Switch statements provide a clean way to handle multiple conditions</li>
+                <li><i class="fas fa-check-circle"></i> They are often more readable than long if-else chains</li>
+                <li><i class="fas fa-check-circle"></i> The break keyword is crucial to prevent fall-through to other cases</li>
+                <li><i class="fas fa-check-circle"></i> The default case handles values that don't match any specified case</li>
+                <li><i class="fas fa-check-circle"></i> Switch statements use strict comparison (===)</li>
+            </ul>
+        </div>
+
+        <footer>
+            <p>Created by Ankit✌️| JavaScript Switch Case Example</p>
+        </footer>
+    </div>
+
+    <script>
+        function getDayName(dayNumber) {
+            let dayName;
+            
+            switch (dayNumber) {
+                case 1:
+                    dayName = 'Monday';
+                    break;
+                case 2:
+                    dayName = 'Tuesday';
+                    break;
+                case 3:
+                    dayName = 'Wednesday';
+                    break;
+                case 4:
+                    dayName = 'Thursday';
+                    break;
+                case 5:
+                    dayName = 'Friday';
+                    break;
+                case 6:
+                    dayName = 'Saturday';
+                    break;
+                case 7:
+                    dayName = 'Sunday';
+                    break;
+                default:
+                    dayName = 'Invalid day number';
+            }
+            
+            return dayName;
+        }
+
+        function testDay() {
+            const input = document.getElementById('dayInput');
+            const output = document.getElementById('output');
+            const dayNumber = parseInt(input.value);
+            
+            if (isNaN(dayNumber)) {
+                output.innerHTML = 'Please enter a valid number';
+                return;
+            }
+            
+            const dayName = getDayName(dayNumber);
+            output.innerHTML = `<strong>Day ${dayNumber}</strong> is <span style="color: #4a6cf7; font-weight: bold">${dayName}</span>`;
+        }
+
+        function setDay(dayNumber) {
+            document.getElementById('dayInput').value = dayNumber;
+            testDay();
+        }
+
+        // Initialize with day 3
+        document.getElementById('dayInput').value = 3;
+        testDay();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,112 @@
+.bodyx {
+
+    margin: 10px;
+    background-color: rgb(64, 246, 185);
+    background: url(download\ \(1\).jpg) no-repeat center center/cover;
+
+}
+
+#photo1 {
+    float: right;
+    height: 200px;
+    border: 2px solid;
+    border-radius: 5px;
+}
+
+#photo2 {
+    float: left;
+    height: 200px;
+    width: 150px;
+    border: 2px solid;
+    border-radius: 5px;
+}
+
+#about {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    font-family: cursive;
+    border: 2px solid;
+    border-radius: 6px;
+}
+
+#detail {
+    font-family: cursive;
+    border: 2px solid;
+    border-radius: 6px;
+}
+
+#shivaji {
+    font-family: cursive;
+    border: 2px double;
+    border-radius: 6px;
+    background-color: orange;
+    /* margin-left: 30%;
+    margin-right:8%;
+    padding-left: 3px; */
+}
+
+#bsingh {
+    font-family: cursive;
+    border: 2px double;
+    border-radius: 6px;
+    background-color: orange;
+    /* margin-left: 40%;
+    margin-right: 46%;
+    padding-left: 3px; */
+}
+
+#bhagat {
+    float: left;
+    height: 200px;
+    width: 200px;
+
+    border: 2px solid;
+    border-radius: 5px;
+    /* clear: right; */
+}
+
+#bhagat2 {
+    float: right;
+    height: 250px;
+    width: 200px;
+    clear: left;
+    border: 2px solid;
+    border-radius: 5px;
+
+}
+
+.item {
+    float: left;
+    height: 200px;
+    width: 200px;
+    margin: 2px;
+    border: 1px solid black;
+    background-color: rgb(173, 244, 173);
+}
+
+.foot {
+    text-align: center;
+    font-size: large;
+    border: 2px solid black;
+    height: 20px;
+    border-radius: 5px 0px;
+    color: rgb(24, 4, 86);
+
+}
+
+
+.green-link {
+    color: red;
+    font-size: 20px;
+    font-family: cursive;
+    background-color: lightgreen;
+    border: 5px double black;
+
+}
+
+.my-link {
+    border-radius: 10px;
+    text-align: center;
+}

@@ -1,0 +1,41 @@
+What is prompt in terminal? 
+    A prompt is the text shown in the terminal that indicates the system is ready to accept a command.
+
+    Symbol          meaning
+    $        ->     Normal User
+    #        ->     Admin / root user
+    >        ->     Common in windows 
+
+
+Why Prompt is Important? 
+    . Shows current location 
+    . Tells user type (normal / root)
+    . Indicates system ready state 
+
+FLOW : 
+    $ 
+    ls -> list of files 
+    $ -> it means ready for next commands
+
+
+1. PS1 (Primary prompt)
+    PS1 is the main prompt shown when the terminal is ready for a new command.
+    eg..        ankit@laptop:~/Desktop$   -> This is PS1
+
+    Common PS1 codes
+
+    code            meaning
+    \u	    ->      Username
+    \h	    ->      Hostname
+    \w	    ->      Current directory
+    $	    ->      User symbol
+
+2. PS2 (Secondary prompt) : 
+    PS2 is the secondary prompt shown when a command is incomplete and needs more input.
+
+    eg..        echo HelloWorld
+                Output >
+
+                that is ">" PS2
+
+                

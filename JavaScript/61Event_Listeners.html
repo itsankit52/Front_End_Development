@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture 61</title>
+
+    <style>
+        h1 {
+            cursor: pointer;
+        }
+
+        .btn {
+            border: 1px solid black;
+            border-radius: 5px;
+            background-color: rgb(0, 4, 255);
+            color: white;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+        }
+
+        .add button {
+            margin-top: 10px;
+            text-align: center;
+            border: 1px solid black;
+            border-radius: 5px;
+            background-color: blue;
+            color: white;
+            cursor: pointer;
+        }
+
+        .card {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100px;
+            height: 100px;
+            border: 2px solid black;
+            border-radius: 10px;
+            background-color: rgb(207, 253, 137);
+            text-align: center;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>Section I</h3>
+    <button id="myButton1">Click </button>
+    <p id="output1">Nothing Happens</p>
+
+    <!-- 
+    <button id="myButton2">Click </button>
+    <p id="output2">Nothing Happens</p> -->
+
+
+
+
+    <!--******************************************************-->
+    <br>
+    <hr>
+    <h1>Section II </h1>
+    <!-- Method : I -->
+    <button class="btn" onclick="greet()">Click Here </button>
+
+    <div class="add">
+        <button ondblclick=" addition()">Double Click to add</button>
+    </div>
+
+    <h2>What are Events and Events Listeners?</h2>
+    <pre><b>Events:</b> These are actions or occurrences that happen in the browser, such as:
+
+        i. User actions: Clicks, key presses, mouse movements.
+        ii. System events: Page loading, errors, timers firing.
+        iii. Custom events: Ones you define yourself (e.g., "userLoggedIn").</pre>
+
+    <pre><b>Event Listeners:</b> Functions (often called "handlers" or "callbacks") attached to 
+                 elements that wait for an event to trigger. When the event fires,
+                 the listener runs automatically.</pre>
+
+    <p><b>NOTE : </b>Without event listeners, JavaScript would be mostly static. They power everything from form
+        submissions to
+        drag-and-drop interfaces.</p>
+
+    <p><b>Key Method:</b> The primary way to attach listeners is addEventListener(). It's more flexible than older
+        methods
+        like onclick (inline attributes) The primary way to attach listeners is addEventListener(). It's more
+        flexible than older methods like onclick (inline attributes)</p>
+
+    <h2>2. Adding an Event Listener: The Basics</h2>
+    <pre>Use element.addEventListener(eventType, callback, [options]):
+
+    <b>i. eventType</b>: A string (e.g., 'click', 'keydown') or an object for custom events.
+
+    <b>ii. callback</b>: The function to run when the event occurs. It receives an event object as its first parameter.
+ 
+    <b>iii. options (optional)</b>: An object for advanced config (e.g., { once: true } to run only once).</pre>
+
+
+    <!-- Card Section -->
+     <h1>Section III</h1>
+     <div class="card" title="Add card">Lorem ipsum dolor Lorem ipsumore.</div>
+
+    <script src="61Event_Listeners.js"></script>
+</body>
+
+</html>

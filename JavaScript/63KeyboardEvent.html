@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture 63</title>
+    <script src="63KeyboardEvent.js" defer></script>
+</head>
+
+<body>
+    <h2>What is keyboard event?</h2>
+    <p>In JavaScript, keyboard events are a crucial type of event that trigger when a user interacts with the keyboard.
+        These events help capture user input on a web page and respond to it accordingly. For example, submitting a form
+        on pressing Enter, handling shortcuts (like Ctrl+S), or controlling movement in a game.</p>
+    <p>Keyboard events work at the DOM (Document Object Model) level and are attached using the addEventListener()
+        method. They can be applied to specific elements like input or textarea, or to the entire document.</p>
+
+    <h3>There are Three Main Types of Keyboard Events</h3>
+    <p>1. <b>keydown :</b> Fires when a key is pressed down, regardless of whether it's held or released. It works for
+        all keys,
+        including letters, numbers, function keys (F1-F12), and modifier keys (Shift, Ctrl, Alt).<br><br>
+        <b>Use case :</b> Ideal for game controls or shortcuts.<br>
+        <b>Example : </b> Moving a character with arrow keys.
+    </p>
+
+    <p>2. <b>keyup :</b>Fires when a key is released<br><br>
+        <b>Use case :</b> Tracking the end of a key press, like in typing counters.<br>
+        <b>Example : </b> Stopping an animation when a key is released.
+    </p>
+
+    <p>3. <b>keypress :</b> Previously fired only for printable keys (e.g., letters, numbers) on press. Avoid it as it's
+        no longer standard. Use keydown instead.<br><br>
+        <b>NOTE :</b> Both keydown and keyup support bubbling, meaning they can propagate to parent elements. keypress
+        did too.
+    </p>
+   
+
+</body>
+
+</html>

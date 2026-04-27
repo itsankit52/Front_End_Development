@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position Property</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="notes">
+        The CSS position property specifies how an element is positioned in a document. It's fundamental
+        for controlling
+        layout and element placement.
+
+        <pre>1.Static (default):
+    Element flows normally in the document.
+    Ignores top, bottom, left, right, and z-index properties.</pre>
+
+        <pre>2.relative
+    Positioned relative to its normal position.
+    Can use top, bottom, left, right to offset it.
+    Doesn't remove element from normal document flow.</pre>
+
+        <pre>3.absolute
+    Positioned relative to nearest positioned ancestor (not static).
+    If no positioned ancestor, uses document body.
+    Removed from normal document flow.</pre>
+        <pre>4.fixed.
+    Positioned relative to viewport.
+    Stays in same place when scrolling.
+    Removed from normal document flow.</pre>
+
+        <pre>5.sticky (hybrid of relative and fixed).
+    Treated as relative until crossing a threshold.
+    Then becomes fixed at specified position.
+    Requires at least one positioning property (top, bottom, etc.)</pre>
+    </div>
+    <div class="container">
+        <img class="image1" src="hanuman ji.jpg" alt="Photo 2">
+        <img class="image2" src="Hanumanji.jpg" alt="Photo 3">
+        <img class="image3" src="bajranjbali.jpg" alt="Photo 4">
+    </div>
+
+    <div class="box"></div>
+</body>
+
+</html>

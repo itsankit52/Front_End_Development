@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture Popup</title>
+    <script defer>
+        document.addEventListener("DOMContentLoaded", () => {
+            const btn = document.querySelector(".btn");
+            const popup = document.querySelector(".popup");
+            const overlay = document.querySelector(".overlay");
+            const close = document.querySelector(".close");
+
+            btn.addEventListener("click", () => {
+                popup.classList.add("open");
+                overlay.classList.add("show");
+            });
+
+            close.addEventListener("click", () => {
+                popup.classList.remove("open");
+                overlay.classList.remove("show");
+            });
+
+            overlay.addEventListener("click", () => {
+                popup.classList.remove("open");
+                overlay.classList.remove("show");
+            });
+        });
+    </script>
+
+    <style>
+        body {
+            margin: 0;
+            background-color: #DECDAC;
+        }
+
+        .btn {
+            width: 120px;
+            height: 35px;
+            border-radius: 15px;
+            background-color: rgb(16, 205, 16);
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin: 40px;
+        }
+
+        .btn:hover {
+            transform: scale(1.02);
+        }
+
+        .popup {
+            position: fixed;
+            width: 500px;
+            height: 300px;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 0 7px 2px rgba(0, 0, 0, .312);
+            padding: 20px;
+            transform: translate(-50%, -50%) scale(0);
+            transition: all .3s ease-in-out;
+            top: 50%;
+            left: 50%;
+            z-index: 10;
+        }
+
+        .popup.open {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .close {
+            font-size: 40px;
+            font-weight: 700;
+            position: absolute;
+            right: 16px;
+            top: 5px;
+            cursor: pointer;
+            font-family: serif;
+        }
+
+        .overlay {
+            position: fixed;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.4);
+            display: none;
+            z-index: 9;
+        }
+
+        .overlay.show {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button class="btn">Open Popup</button>
+
+    <div class="popup">
+        <div class="close">&times;</div>
+        <h2>Don't miss out</h2>
+        <p>Sign up for our newsletter to stay in the loop</p>
+    </div>
+
+    <div class="overlay"></div>
+
+</body>
+
+</html>

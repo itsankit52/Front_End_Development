@@ -1,0 +1,26 @@
+<<<<<<< HEAD
+section {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-top: 3.8rem;
+    align-items: center;
+}
+
+button img {
+    max-width: 40px;
+=======
+section {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-top: 3.8rem;
+    align-items: center;
+}
+
+button img {
+    max-width: 40px;
+>>>>>>> 4b0b7a63b307c54ea863a8d1d5c2251f719f3ac8
+}

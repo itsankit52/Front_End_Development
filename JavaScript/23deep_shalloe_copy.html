@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep copy & Shallow copy</title>
+    <script src="23deep_shalloe_copy.js"></script>
+</head>
+
+<body>
+    <h1>Deep copy & Shallow Copy in JS.</h1>
+    <h2>Shallow Copy</h2>
+    <p>A shallow copy creates a new object and copies all the top-level properties of the original object. However, if a
+        property is itself an object (or an array, which is a type of object), it copies the reference to that nested
+        object, not the object itself.
+        <br><br>
+
+        The result: The top-level properties are independent, but the nested objects are shared between the original and
+         the copy. Modifying a nested object in one will affect the other.
+    </p>
+    <h2>Deep copy</h2>
+    <p>A deep copy creates a completely new object and then recursively copies all properties of the original object, including all nested objects. The original and the copy are entirely independent of each other at all levels. No changes to one will affect the other.</p>
+</body>
+
+</html>
