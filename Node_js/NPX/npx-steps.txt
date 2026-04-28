@@ -1,15 +1,29 @@
-What NPX does? 
-    . Search for a file and execute it.(File can be anything like app.js, app.abc, xyz etc...)
-    . NPX does not use node to execute a file, NPX direct excute file 
+What NPX does:
+- Executes Node.js package binaries without global installation
+- Uses Node.js internally to run JavaScript-based tools
 
+Execution Steps:
 
-Search Step 1. 
-    1.1. Search for package.json in current working directory -> if not found then move to step 2
+Step 1:
+- Check ./node_modules/.bin in current project
+- If binary exists → execute it
 
-    1.2. Searches for name key in json file -> if found then goto search for bin (binanry) key
+Step 2:
+- Check globally installed packages
+- If found → execute it
 
+Step 3:
+- If not found:
+    - Download package temporarily from npm registry
+    - Execute it
+    - Clean up afterward (may cache)
 
-Search Step 2.
-{npm config get script-shell} -> "null" by default 
-{npm config set script-shell} -> give bash path  
-    1.1. Searches for (node_modules\.bin\hello) folder in current working directory 
+Notes:
+- NPX does NOT execute arbitrary files (use node for that)
+- NPX relies on binaries defined in package.json "bin"
+- script-shell config is unrelated to NPX execution
+
+************************************************************
+    node → run code
+    npm → install packages
+    npx → run packages without installing
