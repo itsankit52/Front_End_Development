@@ -50,3 +50,14 @@ app.post('/api/home', (req, res) => {
     // Send response back to the client
     res.send("Successfully Submitted");
 });
+
+
+// Connecting to DB
+const mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost:27017/myCollege', {
+}).then(() => {
+    console.log("Connected");
+}).catch((error) => {
+    console.log("Not Connected :", error);
+})
