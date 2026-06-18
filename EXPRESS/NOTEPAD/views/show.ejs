@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task Detail · Modern</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- tiny extra polish for glassmorphism & smoothness -->
+  <style>
+    * { transition: all 0.2s ease; }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+    }
+    .back-btn:hover {
+      transform: translateX(-4px);
+    }
+    .content-box {
+      background: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2px);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex justify-center items-center p-5 
+             bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-100/40 
+             font-sans antialiased">
+
+  <div class="w-[94%] max-w-3xl glass-card rounded-3xl shadow-2xl p-8 md:p-10 
+              border border-white/30 backdrop-blur-sm">
+
+    <!-- Back Button – modern, with subtle icon and hover -->
+    <a href="/"
+       class="back-btn inline-flex items-center gap-2 mb-8 
+              px-6 py-3 bg-gradient-to-r from-slate-800 to-slate-900 
+              text-white font-medium rounded-xl 
+              shadow-md shadow-slate-800/20 hover:shadow-slate-800/40
+              hover:from-slate-700 hover:to-slate-800 
+              transition-all duration-200 
+              ring-1 ring-white/20">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+      </svg>
+    </a>
+
+    <!-- File Name – with gradient underline & subtle glow -->
+    <div class="mb-6">
+      <h1 class="text-3xl md:text-4xl font-extrabold 
+                 bg-gradient-to-r from-indigo-700 via-blue-700 to-cyan-700 
+                 bg-clip-text text-transparent 
+                 break-words leading-tight">
+        <%= filename %>
+      </h1>
+      <div class="w-16 h-1.5 mt-3 rounded-full bg-gradient-to-r from-indigo-400 to-blue-400"></div>
+    </div>
+
+    <!-- File Content – clean, spacious, with soft card effect -->
+    <div class="content-box rounded-2xl p-6 md:p-8 
+                border border-white/50 shadow-inner 
+                bg-white/40 backdrop-blur-sm">
+      <p class="text-gray-700 text-lg md:text-xl leading-relaxed md:leading-9 
+                whitespace-pre-wrap break-words 
+                font-light tracking-wide">
+        <%= filedata %>
+      </p>
+    </div>
+
+    <!-- subtle decorative meta (optional) -->
+    <div class="mt-8 text-xs text-slate-400/80 flex items-center gap-2">
+      <span class="w-1.5 h-1.5 rounded-full bg-indigo-300"></span>
+      <span>task detail · modern view</span>
+    </div>
+  </div>
+
+  <!-- external script (if any) -->
+  <script src="/javascripts/script.js"></script>
+</body>
+</html>

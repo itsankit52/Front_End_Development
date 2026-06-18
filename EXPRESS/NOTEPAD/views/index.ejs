@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Manager · Modern</title>
+    <!-- Tailwind CSS via CDN + a subtle system font stack -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- tiny extra for smoothness & glassmorphism helpers -->
+    <style>
+        * {
+            transition: all 0.2s ease;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .task-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.2);
+        }
+
+        textarea:focus,
+        input:focus {
+            /* ring: 2px solid #3b82f6; */
+            border-color: transparent;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen py-10 px-4 
+             bg-gradient-to-br from-slate-50 via-blue-50/40 to-indigo-100/60 
+             font-sans antialiased">
+
+    <div class="max-w-6xl mx-auto">
+
+        <!-- Heading with modern gradient & soft glow -->
+        <h1 class="text-5xl font-extrabold text-center mb-12 
+               bg-gradient-to-r from-indigo-600 via-blue-600 to-cyan-600 
+               bg-clip-text text-transparent 
+               drop-shadow-sm tracking-tight">
+            ✦ Task Manager
+        </h1>
+
+        <!-- Form Card – glassmorphism + elevated -->
+        <div class="glass-card rounded-3xl shadow-xl p-8 md:p-10 mb-12 
+                border border-white/30 backdrop-blur-sm">
+            <form action="/create" method="post" class="flex flex-col gap-6">
+                <div>
+                    <label for="titleInput" class="block text-sm font-medium text-slate-700 mb-1.5">Task title</label>
+                    <input id="titleInput" type="text" placeholder="e.g. Design new dashboard" name="title" class="w-full border-0 bg-white/70 rounded-xl px-5 py-3.5 
+                   shadow-inner ring-1 ring-slate-200/80
+                   placeholder:text-slate-400 
+                   focus:ring-2 focus:ring-blue-500 focus:bg-white/90
+                   outline-none transition-all" />
+                </div>
+
+                <div>
+                    <label for="detailsArea" class="block text-sm font-medium text-slate-700 mb-1.5">Description</label>
+                    <textarea id="detailsArea" placeholder="Write a clear description…" name="details" rows="4" class="w-full border-0 bg-white/70 rounded-xl px-5 py-3.5 
+                   shadow-inner ring-1 ring-slate-200/80 resize-y
+                   placeholder:text-slate-400
+                   focus:ring-2 focus:ring-blue-500 focus:bg-white/90
+                   outline-none transition-all"></textarea>
+                </div>
+
+                <button type="submit" class="relative w-full bg-gradient-to-r from-blue-600 to-indigo-600 
+                 text-white font-semibold py-4 rounded-2xl 
+                 shadow-lg shadow-blue-500/30 hover:shadow-blue-600/40 
+                 hover:scale-[1.01] active:scale-[0.98]
+                 transition-all duration-200 
+                 flex items-center justify-center gap-2 
+                 ring-1 ring-white/20">
+                    <span>+ Create Task</span>
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                    </svg>
+                </button>
+            </form>
+        </div>
+
+        <!-- Task grid – modern cards with soft hover -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
+
+            <!-- conditional rendering (server‑side template) -->
+            <% if (files.length> 0) { %>
+                <% files.forEach(function(val) { %>
+                    <div class="task-card bg-white/80 backdrop-blur-sm rounded-2xl p-6 
+                      shadow-md hover:shadow-2xl 
+                      border border-white/50 
+                      transition-all duration-300 
+                      flex flex-col justify-between 
+                      ring-1 ring-slate-200/50">
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-800 break-words 
+                         line-clamp-2 leading-tight">
+                                <%= val %>
+                            </h3>
+                            <!-- subtle decoration line -->
+                            <div class="w-10 h-1 bg-gradient-to-r from-blue-400 to-indigo-400 rounded-full mt-3 mb-4">
+                            </div>
+                        </div>
+
+                        <div class="flex w-full justify-between items-center mt-4">
+                            <a href="/file/<%= val %>" class="inline-flex items-center gap-1.5 
+                     text-indigo-600 font-medium 
+                     hover:text-indigo-800 
+                     group transition-all">
+                                <span>Read More</span>
+                                <span class="group-hover:translate-x-1 transition-transform">→</span>
+                            </a>
+                           
+                            <a href="/delete/<%= val %>" class="inline-flex items-center gap-1.5
+                     text-indigo-600 font-medium 
+                     hover:text-indigo-800 
+                     group transition-all">
+                                <span>Delete task</span>
+                            </a>
+
+                        </div>
+                    </div>
+                    <% }) %>
+                        <% } else { %>
+                            <!-- empty state – modern & playful -->
+                            <div class="col-span-full flex flex-col items-center justify-center 
+                    py-16 px-6 text-center 
+                    bg-white/40 backdrop-blur-sm rounded-3xl 
+                    border border-dashed border-slate-300/70">
+                                <div class="text-6xl mb-4 opacity-60">📋</div>
+                                <h3 class="text-3xl font-light text-slate-500">
+                                    No tasks assigned.
+                                </h3>
+                                <p class="text-slate-400 max-w-sm mt-2">
+                                    Create your first task using the form above.
+                                </p>
+                            </div>
+                            <% } %>
+        </div>
+
+    </div>
+
+    <!-- external script (if any) -->
+    <script src="/javascripts/script.js"></script>
+</body>
+
+</html>

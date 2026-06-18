@@ -1,0 +1,12 @@
+1. DYNAMIC ROUTING 
+
+2. HOW TO GET DATA COMING FROM FRONTEND AT BACKEND ROUTE
+
+
+3. SETTING UP PARSERS FOR FORMS 
+
+4. SETTING UP EJS FOR EJS PAGES 
+        . install ejs : npm i ejs
+        . setup ejs as a view engine
+
+5. SETTING UP PUBLIC METHOD 
