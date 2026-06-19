@@ -1,0 +1,19 @@
+MongoDB -> NoSQL database, store data in object format.
+    eg ... 
+        {
+        "_id": 1,
+        "name": "Ankit",
+        "age": 22,
+        "email": "ankit@gmail.com"
+        }
+-------------------------------------------------
+
+Database -> Collection -> Document
+-------------------------------------------------
+
+
+CODE                    DATABASE 
+-------------------------------------------------
+mongoose.connect   ->   database create 
+model create       ->   Collection(users....)
+CREATE code        ->   documents(user1,2,3...)      
