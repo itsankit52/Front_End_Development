@@ -1,0 +1,71 @@
+1. Authentication (AuthN)
+    Authentication means verifying the identity of a user.
+
+    Example : 
+        Suppose we have a college management system.
+
+        A user enters:
+        Email: ankit@gmail.com
+        Password: 123456
+
+        The server checks:
+            Does this email exist?
+            Is the password correct?
+
+            If yes → User is authenticated (logged in).
+
+            If no → Login fails.
+
+-----------------------------------------------------------------------------------
+
+2. Authorization (AuthZ)
+    Authorization means checking what an authenticated user is allowed to do.
+
+    Example
+        Imagine there are 3 users:
+            Student
+            Teacher
+            Admin
+
+    Permissions:
+
+    Role	    ->      Permissions
+    Student	    ->      View profile
+    Teacher	    ->      Upload marks
+    Admin	    ->      Add/Delete users
+
+    If a student tries:
+
+    DELETE /users/123
+
+    The server says:
+        403 Forbidden
+
+    Because the student is authenticated but not authorized.
+
+-----------------------------------------------------------------------------
+
+SETUP: 
+
+    npm init -y 
+    npm i jsonwebtoken bcrypt express mongoose nodemon cookie-parser
+
+-----------------------------------------------------------------------------
+bcrypt : 
+    // Encryption: 
+    SYNTAX : 
+        bcrypt.genSalt(saltRounds, function (err, salt) 
+            {
+                bcrypt.hash("mypassword", salt, function (err, hash)
+                {
+                    // Store hash in your password DB.
+                });
+            });
+
+    
+    // Decryption : 
+        SYNTAX : 
+            bcrypt.compare("mypassword", hash, function (err, result)
+            {
+                // result == true
+            })
